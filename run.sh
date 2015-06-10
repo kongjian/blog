@@ -5,8 +5,8 @@
 # =======================================
 
 APP=blog
-APP_DIR=/root/go/src/github.com/jxufeliujj/blog
-LOG_DIR=/root/go/src/github.com/jxufeliujj/blog
+APP_DIR=/home/admin/blog
+LOG_DIR=/home/admin/blog
 PID_FILE=$APP_DIR/pid
 
 # =======================================

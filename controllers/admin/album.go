@@ -1,7 +1,7 @@
 package admin
 
 import (
-	"github.com/jxufeliujj/blog/models"
+	"github.com/kongjian/blog/models"
 	"strconv"
 	"strings"
 	"time"

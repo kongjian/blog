@@ -2,7 +2,7 @@ package blog
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/jxufeliujj/blog/models"
+	"github.com/kongjian/blog/models"
 	"strconv"
 	"strings"
 )

@@ -3,7 +3,7 @@ package admin
 import (
 	"fmt"
 	"github.com/astaxie/beego/orm"
-	"github.com/jxufeliujj/blog/models"
+	"github.com/kongjian/blog/models"
 	"github.com/nfnt/resize"
 	"image/jpeg"
 	"io"

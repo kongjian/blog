@@ -214,5 +214,4 @@ CREATE TABLE `tb_link` (
 -- ----------------------------
 -- Records of tb_link
 -- ----------------------------
-INSERT INTO tb_link VALUES ('1', '云卷云舒', 'http://www.doubleliu.com', '0');
-INSERT INTO tb_link VALUES ('2', '兜里', 'http://dou.li', '0');
+INSERT INTO tb_link VALUES ('1', 'nklike', 'http://www.nklike.com', '0');

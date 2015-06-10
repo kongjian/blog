@@ -2,7 +2,7 @@ package admin
 
 import (
 	"fmt"
-	"github.com/jxufeliujj/blog/models"
+	"github.com/kongjian/blog/models"
 	"os"
 	"strings"
 	"time"
