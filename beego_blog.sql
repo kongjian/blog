@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `beego_blog` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `beego_blog`;
--- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.22, for osx10.8 (x86_64)
 --
--- Host: doubleliu.com    Database: beego_blog
+-- Host: localhost    Database: beego_blog
 -- ------------------------------------------------------
--- Server version	5.1.69
+-- Server version	5.6.22
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,8 +31,44 @@ CREATE TABLE `tb_album` (
   `rank` tinyint(3) NOT NULL DEFAULT '0',
   `photonum` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_album`
+--
+
+LOCK TABLES `tb_album` WRITE;
+/*!40000 ALTER TABLE `tb_album` DISABLE KEYS */;
+INSERT INTO `tb_album` VALUES (14,'青海','','2015-06-08 23:21:44',0,1,0);
+/*!40000 ALTER TABLE `tb_album` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_link`
+--
+
+DROP TABLE IF EXISTS `tb_link`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_link` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `sitename` varchar(80) NOT NULL DEFAULT '' COMMENT '网站名字',
+  `url` varchar(200) NOT NULL DEFAULT '' COMMENT '友链URL地址',
+  `rank` tinyint(4) NOT NULL DEFAULT '0' COMMENT '排序值',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_link`
+--
+
+LOCK TABLES `tb_link` WRITE;
+/*!40000 ALTER TABLE `tb_link` DISABLE KEYS */;
+INSERT INTO `tb_link` VALUES (1,'个人网站','http://www.nklike.com',0);
+/*!40000 ALTER TABLE `tb_link` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_mood`
@@ -49,8 +83,17 @@ CREATE TABLE `tb_mood` (
   `cover` varchar(70) CHARACTER SET utf8 NOT NULL DEFAULT '/static/upload/defaultcover.png' COMMENT '说说图片',
   `posttime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '发布时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_mood`
+--
+
+LOCK TABLES `tb_mood` WRITE;
+/*!40000 ALTER TABLE `tb_mood` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_mood` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_option`
@@ -65,9 +108,18 @@ CREATE TABLE `tb_option` (
   `value` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-INSERT INTO `tb_option` (`id`, `name`, `value`) VALUES (1,'sitename','云卷云舒'),(2,'siteurl','http://blog.doubleliu.com'),(3,'subtitle','带着相机去旅行'),(4,'pagesize','2'),(5,'keywords','摄影'),(6,'description','来一场说走就走的旅行'),(8,'theme','double'),(9,'timezone','8'),(10,'stat','<script language=\"javascript\" type=\"text/javascript\" src=\"http://js.users.51.la/17253002.js\"></script>\r\n<noscript><a href=\"http://www.51.la/?17253002\" target=\"_blank\"><img alt=\"&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;\" src=\"http://img.users.51.la/17253002.asp\" style=\"border:none\" /></a></noscript>'),(11,'weibo','http://weibo.com/u/2000465995'),(12,'github','https://github.com/jxufeliujj'),(16,'duoshuo','doubleliu'),(17,'albumsize','9');
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_option`
+--
+
+LOCK TABLES `tb_option` WRITE;
+/*!40000 ALTER TABLE `tb_option` DISABLE KEYS */;
+INSERT INTO `tb_option` VALUES (1,'sitename','成长之旅'),(2,'siteurl','http://www.nklike.com/blog'),(3,'subtitle','一路上你在看风景,风景也在看你'),(4,'pagesize','2'),(5,'keywords','李克'),(6,'description','个人学习网站'),(8,'theme','double'),(9,'timezone','8'),(10,'stat','<script src=\"http://s96.cnzz.com/stat.php?id=4909665&web_id=4909665\" language=\"JavaScript\"></script>'),(11,'weibo','http://weibo.com/nklike'),(12,'github','https://github.com/kongjian'),(16,'duoshuo','12173826'),(17,'albumsize','4'),(18,'nickname','like');
+/*!40000 ALTER TABLE `tb_option` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_photo`
@@ -85,6 +137,15 @@ CREATE TABLE `tb_photo` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=262 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_photo`
+--
+
+LOCK TABLES `tb_photo` WRITE;
+/*!40000 ALTER TABLE `tb_photo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_photo` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -131,8 +192,18 @@ CREATE TABLE `tb_post` (
   KEY `userid` (`userid`),
   KEY `posttime` (`posttime`),
   KEY `urlname` (`urlname`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_post`
+--
+
+LOCK TABLES `tb_post` WRITE;
+/*!40000 ALTER TABLE `tb_post` DISABLE KEYS */;
+INSERT INTO `tb_post` VALUES (14,1,'admin','学习beego','','',0,'<p>最近项目中用到了go语言,接触到了beego,一个很强大的mvc封装,看到很多使用beego的项目,一时兴起,找了一个看起来不错的项目进行修改和测试.<span style=\"line-height: 1.5em;\">一方面学习了go语言,一方面又能够对网站前端做一些了解.</span></p><p><span style=\"line-height: 1.5em;\">感谢<a href=\"http://beego.me/\" target=\"_self\" title=\"\">astaxie</a>提供的beego</span></p><p><span style=\"line-height: 1.5em;\">感谢<a href=\"https://github.com/jxufeliujj/blog\" target=\"_self\" title=\"\">jxufeliujj</a>开发网站框架</span></p>',',go,',3,0,'2015-06-10 16:04:32','2015-06-10 16:07:37',0,'/static/upload/defaultcover.png');
+/*!40000 ALTER TABLE `tb_post` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_tag`
@@ -147,8 +218,18 @@ CREATE TABLE `tb_tag` (
   `count` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '使用次数',
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_tag`
+--
+
+LOCK TABLES `tb_tag` WRITE;
+/*!40000 ALTER TABLE `tb_tag` DISABLE KEYS */;
+INSERT INTO `tb_tag` VALUES (11,'go',1);
+/*!40000 ALTER TABLE `tb_tag` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_tag_post`
@@ -166,8 +247,18 @@ CREATE TABLE `tb_tag_post` (
   PRIMARY KEY (`id`),
   KEY `tagid` (`tagid`),
   KEY `postid` (`postid`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_tag_post`
+--
+
+LOCK TABLES `tb_tag_post` WRITE;
+/*!40000 ALTER TABLE `tb_tag_post` DISABLE KEYS */;
+INSERT INTO `tb_tag_post` VALUES (57,11,14,0,'2015-06-10 16:07:37');
+/*!40000 ALTER TABLE `tb_tag_post` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tb_user`
@@ -188,9 +279,18 @@ CREATE TABLE `tb_user` (
   `active` tinyint(3) NOT NULL DEFAULT '0' COMMENT '是否激活',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-INSERT INTO `tb_user` VALUES (1,'admin','7fef6171469e80d32c0559f88b377245','admin@admin.com',6,'127.0.0.1','2013-12-25 10:00:11','',1);
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_user`
+--
+
+LOCK TABLES `tb_user` WRITE;
+/*!40000 ALTER TABLE `tb_user` DISABLE KEYS */;
+INSERT INTO `tb_user` VALUES (1,'admin','8ee649c51f6a4cf2b5992137aa04f617','nklike@126.com',8,'127.0.0.1','2015-06-10 15:45:18','',1),(2,'nklike','8ee649c51f6a4cf2b5992137aa04f617','nklike@126.com',0,'','2015-06-10 07:45:35','',1);
+/*!40000 ALTER TABLE `tb_user` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -201,17 +301,4 @@ INSERT INTO `tb_user` VALUES (1,'admin','7fef6171469e80d32c0559f88b377245','admi
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-09-15 16:53:52
-
-CREATE TABLE `tb_link` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `sitename` varchar(80) NOT NULL DEFAULT '' COMMENT '网站名字',
-  `url` varchar(200) NOT NULL DEFAULT '' COMMENT '友链URL地址',
-  `rank` tinyint(4) NOT NULL DEFAULT '0' COMMENT '排序值',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of tb_link
--- ----------------------------
-INSERT INTO tb_link VALUES ('1', 'nklike', 'http://www.nklike.com', '0');
+-- Dump completed on 2015-06-10 18:03:08
